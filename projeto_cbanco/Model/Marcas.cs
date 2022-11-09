@@ -1,22 +1,21 @@
-﻿using System;
-using System.Data;
-using System.Windows.Forms;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
-using MySql.Data.MySqlClient;
+using System.Windows.Forms;
 
 namespace projeto_cbanco.Model
 {
-    public class Cidades
+    internal class Marcas
     {
         public int id { get; set; }
 
-        public string nome { get; set; }
+        public string marca { get; set; }
 
-        public string uf { get; set; }
+        
 
         public void Incluir()
         {
@@ -24,11 +23,9 @@ namespace projeto_cbanco.Model
             {
                 Banco.AbrirConexao();
 
-                Banco.Comando = new MySqlCommand("INSERT INTO cidades (nome,uf) VALUES (@nome, @uf)", Banco.Conexao);
+                Banco.Comando = new MySqlCommand("INSERT INTO marcas (marca) VALUES (@marca)", Banco.Conexao);
 
-                Banco.Comando.Parameters.AddWithValue("@nome", nome);
-
-                Banco.Comando.Parameters.AddWithValue("@uf", uf);
+                Banco.Comando.Parameters.AddWithValue("@marca", marca);
 
                 Banco.Comando.ExecuteNonQuery();
 
@@ -46,14 +43,12 @@ namespace projeto_cbanco.Model
             {
                 Banco.AbrirConexao();
 
-                Banco.Comando = new MySqlCommand("UPDATE cidades SET nome=@nome, uf=@uf WHERE id=@id", Banco.Conexao);
+                Banco.Comando = new MySqlCommand("UPDATE marcas SET marca=@marca WHERE id=@id", Banco.Conexao);
 
 
                 Banco.Comando.Parameters.AddWithValue("@id", id);
 
-                Banco.Comando.Parameters.AddWithValue("@nome", nome);
-
-                Banco.Comando.Parameters.AddWithValue("@uf", uf);
+                Banco.Comando.Parameters.AddWithValue("@marca", marca);
 
                 Banco.Comando.ExecuteNonQuery();
 
@@ -70,12 +65,12 @@ namespace projeto_cbanco.Model
             {
                 Banco.AbrirConexao();
 
-                Banco.Comando = new MySqlCommand("DELETE FROM cidades WHERE id=@id", Banco.Conexao);
+                Banco.Comando = new MySqlCommand("DELETE FROM marcas WHERE id=@id", Banco.Conexao);
 
 
                 Banco.Comando.Parameters.AddWithValue("@id", id);
 
-                
+
                 Banco.Comando.ExecuteNonQuery();
 
                 Banco.FecharConexao();
@@ -92,13 +87,13 @@ namespace projeto_cbanco.Model
             {
                 Banco.AbrirConexao();
 
-                Banco.Comando = new MySqlCommand("SELECT * FROM cidades WHERE nome LIKE @nome" + " order by nome", Banco.Conexao);
+                Banco.Comando = new MySqlCommand("SELECT * FROM marcas WHERE marca LIKE @marca" + " order by marca", Banco.Conexao);
 
 
-                Banco.Comando.Parameters.AddWithValue("@nome", nome + "%");
+                Banco.Comando.Parameters.AddWithValue("@marca", marca + "%");
 
 
-                Banco.Adaptador = new MySqlDataAdapter(Banco.Comando) ;
+                Banco.Adaptador = new MySqlDataAdapter(Banco.Comando);
                 Banco.datTabela = new DataTable();
                 Banco.Adaptador.Fill(Banco.datTabela);
                 Banco.FecharConexao();
@@ -112,8 +107,6 @@ namespace projeto_cbanco.Model
 
             }
         }
-
-
 
     }
 }

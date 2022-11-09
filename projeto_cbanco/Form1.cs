@@ -28,5 +28,17 @@ namespace projeto_cbanco
             FrmCidades form = new FrmCidades();
             form.Show();
         }
+
+        private void marcasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmMarcas form = new FrmMarcas();
+            form.Show();
+        }
+
+        private void categoriasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmCategorias form = new FrmCategorias();
+            form.Show();
+        }
     }
 }

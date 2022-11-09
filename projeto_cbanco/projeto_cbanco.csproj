@@ -98,8 +98,10 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Caixa.cs" />
+    <Compile Include="Model\Categorias.cs" />
     <Compile Include="Model\Cidades.cs" />
     <Compile Include="Model\Cliente.cs" />
+    <Compile Include="Model\Marcas.cs" />
     <Compile Include="Model\Produto.cs" />
     <Compile Include="Model\VendaCab.cs" />
     <Compile Include="Model\VendaDet.cs" />
@@ -110,6 +112,12 @@
     </Compile>
     <Compile Include="View\FrmCaixa.Designer.cs">
       <DependentUpon>FrmCaixa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmCategorias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmCategorias.Designer.cs">
+      <DependentUpon>FrmCategorias.cs</DependentUpon>
     </Compile>
     <Compile Include="View\FrmCidades.cs">
       <SubType>Form</SubType>
@@ -135,6 +143,12 @@
     <Compile Include="View\FrmConsultaVendProd.Designer.cs">
       <DependentUpon>FrmConsultaVendProd.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\FrmMarcas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmMarcas.Designer.cs">
+      <DependentUpon>FrmMarcas.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FrmVendas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,8 +167,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\FrmCategorias.resx">
+      <DependentUpon>FrmCategorias.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\FrmCidades.resx">
       <DependentUpon>FrmCidades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmMarcas.resx">
+      <DependentUpon>FrmMarcas.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

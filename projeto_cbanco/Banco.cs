@@ -61,6 +61,19 @@ namespace projeto_cbanco
 
                 Comando.ExecuteNonQuery();
 
+                Comando = new MySqlCommand("CREATE TABLE IF NOT EXISTS Marcas" +
+                                           "(id integer auto_increment primary key," +
+                                           "marca varchar(100))" , Conexao);
+                                         
+
+                Comando.ExecuteNonQuery();
+
+                Comando = new MySqlCommand("CREATE TABLE IF NOT EXISTS Categorias" +
+                                           "(id integer auto_increment primary key," +
+                                           "categoria varchar(100))", Conexao);
+
+                Comando.ExecuteNonQuery();
+
                 FecharConexao();
             }
             catch (Exception e)
