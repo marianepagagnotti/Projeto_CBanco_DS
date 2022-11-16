@@ -173,6 +173,9 @@
     <EmbeddedResource Include="View\FrmCidades.resx">
       <DependentUpon>FrmCidades.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmCliente.resx">
+      <DependentUpon>FrmCliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\FrmMarcas.resx">
       <DependentUpon>FrmMarcas.cs</DependentUpon>
     </EmbeddedResource>

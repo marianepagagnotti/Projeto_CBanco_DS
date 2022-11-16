@@ -40,5 +40,11 @@ namespace projeto_cbanco
             FrmCategorias form = new FrmCategorias();
             form.Show();
         }
+
+        private void clienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmCliente form = new FrmCliente();
+            form.Show();
+        }
     }
 }
