@@ -36,12 +36,12 @@ namespace projeto_cbanco.View
 
         void carregarGrid(string pesquisa)
         {
-            ci = new Cidades()
+            cl = new Cliente()
 
             {
                 nome = pesquisa
             };
-            dgvClientes.DataSource = ci.Consultar();
+            dgvClientes.DataSource = cl.Consultar();
 
         }
 
